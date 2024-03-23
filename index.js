@@ -57,6 +57,7 @@ const redirectToInfoPage = () => {
 generatePalette();
 
 infoButton.addEventListener('click', redirectToInfoPage);
+generateButton.addEventListener('click', generatePalette);
 
 window.addEventListener('offline', () => {
   showNotification('Internet Connection Lost', 'info');
