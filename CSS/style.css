@@ -17,8 +17,8 @@
   background-image: linear-gradient(#af4c68, #974058);
 }
 
-*
- {
+/* General Reset */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -26,42 +26,44 @@
     list-style: none;
     outline: none;
     border: none;
-    transition: all 0.2s linear;
-  }
-  
-  ::selection {
-      background: #af4c68;
-  }
-  
-  :root {
-    --bg-clr: #283747;
-    --white: #1B2631;
+}
+
+/* Selection Highlight */
+::selection {
+    background: #af4c68;
+}
+
+/* Root Variables */
+:root {
+    --bg-clr: #111826;
+    --white: #030711;
     --shadow-clr: rgba(89, 40, 82, 0.15);
     --text-clr: #ffffff;
-    --genBtn-clr: #041644;
-    --genBtn-hover: #1a3f88;
+    --genBtn-clr: #ff004c;
+    --genBtn-hover: #b94a6b;
     --copyBtn-clr: 255, 255, 255;
-  }
-  
-  html {
+}
+
+/* Base Styles */
+html {
     font-size: 10px;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Poppins', sans-serif;
     background: var(--bg-clr);
-  }
-  
-  p {
+}
+
+p {
     font-size: 1.6rem;
     line-height: 1.5;
-  }
-  
-  img {
+}
+
+img {
     width: 100%;
-  }
-  
-  .container {
+}
+
+.container {
     width: 90vmin;
     padding: 3rem 4rem;
     position: absolute;
@@ -74,39 +76,38 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-
-  @keyframes tickFade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
-  
-  h1 {
+@keyframes tickFade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+h1 {
     font-size: 3rem;
     color: var(--text-clr);
     margin-bottom: 5rem;
-  }
-  
-  .color-container {
+}
+
+.color-container {
     width: 80vmin;
     margin-bottom: 5rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
-  }
-  
-  .color-box {
+}
+
+.color-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  
-  .color-circle {
+}
+
+.color-circle {
     width: 12vmin;
     height: 12vmin;
     background: #ffdd88;
@@ -116,13 +117,15 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
-  }
-  
-  .color-circle:hover {
+    transition: transform 0.3s ease;
+}
+
+.color-circle:hover,
+.color-circle:focus {
     transform: scale(1.2);
-  }
-  
-  #copy-btn {
+}
+
+#copy-btn {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,89 +134,95 @@
     border-radius: 1rem;
     padding: 0.5rem;
     opacity: 0;
-  }
-  
-  #copy-btn:hover {
-    cursor: pointer;
-  }
+}
 
-  #copy-btn span {
+#copy-btn:hover {
+    cursor: pointer;
+}
+
+#copy-btn span {
     font-size: 1.5rem;
     color: var(--text-clr);
-  }
-  
-  h2 {
+}
+
+h2 {
     font-size: 1.2rem;
     font-weight: 400;
     opacity: 0.5;
     color: #ffffff;
     font-weight: bold;
-  }
-  
-  .color-circle:hover #copy-btn {
+}
+
+.color-circle:hover #copy-btn,
+.color-circle:focus #copy-btn {
     opacity: 1;
-  }
-  
-  #gen-btn {
+}
+
+#gen-btn {
     font-size: 1.5rem;
     font-weight: 600;
     background: var(--genBtn-clr);
     padding: 1.5rem 2.5rem;
     border-radius: 1.5rem;
-    color: #DE3163;
+    color: #ffffff;
     cursor: pointer;
     margin-bottom: 1rem;
-  }
-  
-  #gen-btn:hover {
+}
+
+#gen-btn:hover {
     background: var(--genBtn-hover);
-    color: #DE3163;
+}
 
-  }
-
-  .custom-divider {
+.custom-divider {
     height: 2px;
-    background-color: #ccc;
+    background-color: #ff004c;
     width: 100%;
     position: absolute;
     top: 20%;
-  }
-  
-  @media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 600px) {
     .custom-divider {
-      top: 120px; 
+        top: 120px;
     }
-  }
-  
-  .upper-paragraph {
+}
+
+.upper-paragraph {
     position: relative;
     top: -20px;
     font-size: 1.2rem;
-    line-height: 1.5; 
+    line-height: 1.5;
     font-weight: bold;
     color: #ccc !important;
     text-align: center;
-  }
-  
-  .container p {
+}
+
+.container p {
     font-size: 1.2rem;
-    line-height: 1.5; 
+    line-height: 1.5;
     font-weight: bold;
     color: #ffffff;
     text-align: center;
-    margin-top: 2rem; 
-  }
-  
+    margin-top: 2rem;
+}
 
-  .custom-link {
+.custom-link {
     text-decoration: none;
     font-weight: bold;
-    color: #DE3163;
+    color: #ff004c;
     transition: color 0.3s, text-decoration 0.3s, font-weight 0.3s;
-  }
-  
-  .custom-link:hover {
+}
+
+.custom-link:hover {
     text-decoration: underline;
-    color: #9b2144;
-  }
-  
+    color: #b94a6b;
+}
+
+*:focus {
+    outline: 2px solid #ff004c;
+    outline-offset: 2px;
+}
+
+.color-circle:focus-visible {
+    box-shadow: 0 0 0 3px rgba(255, 0, 76, 0.5);
+}
