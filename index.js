@@ -4,11 +4,10 @@ const notificationText = document.getElementById('notificationText');
 const infoButton = document.getElementById('infoButton');
 
 const generateRandomColor = () => {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
+  const hue = Math.floor(Math.random() * 360);
+  const saturation = Math.floor(Math.random() * 50) + 50;
+  const lightness = Math.floor(Math.random() * 40) + 30;
+  const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
   return color;
 };
 
