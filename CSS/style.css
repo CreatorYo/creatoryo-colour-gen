@@ -140,7 +140,7 @@
     background: var(--genBtn-clr);
     padding: 1.5rem 2.5rem;
     border-radius: 1.5rem;
-    color: #0080ff;
+    color: #DE3163;
     cursor: pointer;
     margin-bottom: 1rem;
   }
@@ -159,13 +159,10 @@
   
   @media only screen and (max-width: 600px) {
     .custom-divider {
-      top: 130px; 
+      top: 167px; 
     }
   }
   
-  
-  
-
   .upper-paragraph {
     position: relative;
     top: -20px;
