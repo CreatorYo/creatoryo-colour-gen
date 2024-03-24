@@ -2,7 +2,6 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('https://images.pexels.com/photos/1650770/pexels-photo-1650770.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-size: cover;
     display: flex;
     justify-content: center;
