@@ -1,39 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CreatorYo Creations | Colour Gen</title>
+    <link rel="stylesheet" href="CSS/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180"
+      href="x-icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32"
+      href="x-icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16"
+      href="x-icon/favicon-16x16.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com"
+      crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CreatorYo Games | Colour Palette Generator</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="x-icon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="x-icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="x-icon/favicon-16x16.png">
-</head>
+  <div class="container">
+    <h1>Colour Generator</h1>
+    <p class="upper-paragraph">Check out our brand new colour picker extension
+      on the <a href="mailto:creatoryogamesspprt@gmail.com"
+        class="custom-link">chrome web store</a>.</p>
+    <div class="custom-divider"></div>
+    <div class="color-container">
 
-<body>
-    <div class="container">
-        <h1>Palette Generator</h1>
-        <p>Use this for design purposes, productivity usage, developing and many more! We recommend you check out our colour picker on the <a href="https://chromewebstore.google.com/detail/color-picker-creatoryo-cr/alaoplhjbinojmkmoboealigldgjfamj" target="_blank">Chrome Web Store</a>.</p>
-        <p>To copy, click on your preferred color.</p>
-        <hr class="custom-divider">
-        <div class="palette-container" id="palette"></div>
-        <button id="generateButton"><i class="fas fa-sync-alt"></i> Refresh </button>
-        <button id="infoButton"><i class="fas fa-info-circle"></i> Info</button>
-        <p>
-            Need help? Not a problem contact us via our <a href="mailto:creatoryogamesspprt@gmail.com" target="_blank">email</a> or by our <a href="https://discord.gg/HUkwF7EEns" target="_blank">communication server</a>.
-        </p>
-        <hr class="custom-divider">
-        <p>&copy; 2024 CreatorYo Games. All rights reserved.</p>
+      <div class="color-box">
+        <div class="color-circle">
+          <button id="copy-btn">
+            <span class="material-symbols-outlined"> content_copy </span>
+          </button>
+        </div>
+        <h2>#ffffff</h2>
+      </div>
+
+      <div class="color-box">
+        <div class="color-circle">
+          <button id="copy-btn">
+            <span class="material-symbols-outlined"> content_copy </span>
+          </button>
+        </div>
+        <h2>#ffffff</h2>
+      </div>
+
+      <div class="color-box">
+        <div class="color-circle">
+          <button id="copy-btn">
+            <span class="material-symbols-outlined"> content_copy </span>
+          </button>
+        </div>
+        <h2>#000000</h2>
+      </div>
+
+      <div class="color-box">
+        <div class="color-circle">
+          <button id="copy-btn">
+            <span class="material-symbols-outlined"> content_copy </span>
+          </button>
+        </div>
+        <h2>#000000</h2>
+      </div>
+      
+      <div class="color-box">
+        <div class="color-circle">
+          <button id="copy-btn">
+            <span class="material-symbols-outlined"> content_copy </span>
+          </button>
+        </div>
+        <h2>#000000</h2>
+      </div>
     </div>
-
-    <div class="notification" id="notification">
-        <div class="tick"><i class="fas fa-check-circle"></i></div>
-        <div id="notificationText"></div>
-    </div>
-
+    <button id="gen-btn">Refresh Colours</button>
+    <div class="custom-divider2"></div>
+    <p>Need help? No worries, our fellow staff members will be more than happier
+      to help. You can contact us via our <a
+        href="mailto:creatoryogamesspprt@gmail.com"
+        class="custom-link">email</a> or our <a
+        href="https://discord.gg/cNBUTfRCJY" class="custom-link">communication
+        server</a>.</p>
+  </div>
+  <body>
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>

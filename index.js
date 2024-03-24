@@ -1,67 +1,32 @@
-const paletteContainer = document.getElementById('palette');
-const notification = document.getElementById('notification');
-const notificationText = document.getElementById('notificationText');
-const infoButton = document.getElementById('infoButton');
+const colors = document.querySelectorAll('.color-box');
+const genBtn = document.querySelector('#gen-btn');
 
-const generateRandomColor = () => {
-  const hue = Math.floor(Math.random() * 360);
-  const saturation = Math.floor(Math.random() * 50) + 50;
-  const lightness = Math.floor(Math.random() * 40) + 30;
-  const color = `hsl(${hue}, ${saturation}%, ${lightness}%)`;
-  return color;
-};
+function genColor() {
+  colors.forEach((color) => {
+    let hexCode = '#' + Math.random().toString(16).substring(2, 8);
+    console.log(hexCode);
+    const colorCircle = color.querySelector('.color-circle');
+    const colorHex = color.querySelector('h2');
+    const copyBtn = color.querySelector('#copy-btn');
 
-const generatePalette = () => {
-  paletteContainer.innerHTML = '';
-  for (let i = 0; i < 5; i++) {
-    const color = generateRandomColor();
-    const colorDiv = document.createElement('div');
-    colorDiv.classList.add('color');
-    colorDiv.style.backgroundColor = color;
-    colorDiv.addEventListener('click', () => {
-      if (navigator.onLine) {
-        copyToClipboard(color);
-        showNotification('Copied!');
-      } else {
-        showNotification('Internet Connection Lost', 'info');
-      }
+    colorCircle.style.backgroundColor = hexCode;
+    colorCircle.style.boxShadow = `0 1rem 3rem -1rem ${hexCode}88`;
+    colorHex.innerHTML = hexCode;
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(hexCode).then(() => {
+        // Change the copy button to a green tick symbol with animation
+        copyBtn.innerHTML = '<span class="material-symbols-outlined tick-symbol" style="color: #222; font-size: 24px; animation: tickFade 0.5s ease;">check_circle</span>';
+        setTimeout(() => {
+          // Reset the copy button after 3 seconds
+          copyBtn.innerHTML = '<span class="material-symbols-outlined"> content_copy </span>';
+        }, 3000);
+      });
     });
-    paletteContainer.appendChild(colorDiv);
-  }
-  showNotification('Reloaded colours!');
-};
+  });
+}
 
-const copyToClipboard = (color) => {
-  navigator.clipboard.writeText(color);
-};
-
-const showNotification = (message, type = 'default') => {
-  notificationText.textContent = message;
-  notification.classList.add('show');
-  if (type === 'info') {
-    notification.classList.add('info');
-  } else {
-    notification.classList.remove('info');
-  }
-  setTimeout(() => {
-    notification.classList.remove('show');
-    notification.classList.remove('info');
-  }, 3000);
-};
-
-const redirectToInfoPage = () => {
-  window.location.href = 'information.html';
-};
-
-generatePalette();
-
-infoButton.addEventListener('click', redirectToInfoPage);
-generateButton.addEventListener('click', generatePalette);
-
-window.addEventListener('offline', () => {
-  showNotification('Internet Connection Lost', 'info');
-});
-
-window.addEventListener('online', () => {
-  showNotification('Internet Connection Restored');
+window.onload = genColor();
+genBtn.addEventListener('click', () => {
+  genColor();
 });
