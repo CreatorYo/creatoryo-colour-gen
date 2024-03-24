@@ -167,6 +167,8 @@
   
   #gen-btn:hover {
     background: var(--genBtn-hover);
+    color: #DE3163;
+
   }
 
   .custom-divider {
@@ -179,7 +181,7 @@
   
   @media only screen and (max-width: 600px) {
     .custom-divider {
-      top: 80px; 
+      top: 120px; 
     }
   }
   
@@ -193,9 +195,6 @@
     text-align: center;
   }
   
-  
-  
-
   .container p {
     font-size: 1.2rem;
     line-height: 1.5; 
